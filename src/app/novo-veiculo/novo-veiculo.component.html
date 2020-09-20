@@ -1,0 +1,33 @@
+<div>
+  <h3>Adicionar Novo Veiculo</h3>
+</div>
+<form class="example-container" [formGroup]="productForm" (ngSubmit)="addVeiculo(productForm.value)">
+  <mat-form-field>
+    <input matInput name='marca_veiculo' placeholder="Marca do Veiculo" formControlName='marca_veiculo'>
+  </mat-form-field>
+  <mat-form-field>
+    <textarea  matInput name='nome_veiculo' placeholder="Modelo" formControlName='nome_veiculo'></textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <textarea  matInput name='versao_veiculo' placeholder="Versão do veiculo" formControlName='versao_veiculo'></textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <input  matInput name='ano_veiculo' placeholder="Ano de fabricação" formControlName='ano_veiculo'>
+  </mat-form-field>
+  <mat-form-field>
+    <input  matInput name='kilometragem_veiculo' placeholder="Kilometragem" formControlName='kilometragem_veiculo'>
+  </mat-form-field>
+  <mat-form-field>
+    <textarea  matInput name='cor_veiculo' placeholder="Cor" formControlName='cor_veiculo'></textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput name='preco_veiculo' placeholder="Preço do veiculo" formControlName='preco_veiculo'>
+  </mat-form-field>
+
+  <button type="submit" [disabled]="!productForm.valid" mat-button color="primary" >Adicionar Veiculo</button>
+</form>
+
+
+
+
+
