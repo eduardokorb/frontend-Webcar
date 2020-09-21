@@ -7,20 +7,22 @@ import { Veiculo } from './../model/veiculo';
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
-const apiCarro = 'Http://localhost:3000/api/carros';
-const apiMarca = 'Http://localhost:3000/api/marcas';
+const apiCarro = '/api/carros';
+const apiMarca = '/api/marcas';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class ApiService {
 
-  constructor(private http: httpClient) { }
+  constructor(private http: HttpClient) {}
 
   getVeiculos (): Observable<Veiculo[]>{
     return this.http.get<Veiculo[]>(apiCarro)
     .pipe(
-      tap(veiculos=> console.log('Leu os veiculos')),
+      tap(veiculos => console.log('leu os veiculos')),
+      catchError(this.handleError('getVeiculos', []))
     );
   }
 

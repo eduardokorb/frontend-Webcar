@@ -7,4 +7,5 @@ export class Veiculo {
   kilometragem: string;
   cor: string;
   preco: string;
+  dt_atualizacao: string
 }

@@ -2,10 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from './../service/api.service';
 import { Veiculo } from './../model/veiculo';
 
-displayedColumns: string[] = ['_id','marca','nome','versao','ano','kilometragem','cor','preco'];
-dataSource: Veiculo[];
-constructor(private _api: ApiService) { }
-
 @Component({
   selector: 'app-veiculos',
   templateUrl: './veiculos.component.html',
@@ -13,13 +9,17 @@ constructor(private _api: ApiService) { }
 })
 export class VeiculosComponent implements OnInit {
 
-  constructor() { }
+  displayedColumns: string[] = ['_id', 'marca', 'nome', 'versao', 'ano', 'kilometragem', 'cor', 'preco'];
+  dataSource: Veiculo[];
+  isLoadingResults = false;
 
-  ngOnInit(): {
+  constructor(private _api: ApiService) { }
+
+  ngOnInit() {
     this._api.getVeiculos()
     .subscribe(res => {
-      this.dataSource = res;
-      console.log(this.dataSource);
+      this.dataSource = res.carro;
+      console.log(res);
       this.isLoadingResults = false;
     }, err => {
       console.log(err);
