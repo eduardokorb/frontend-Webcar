@@ -19,3 +19,18 @@
   margin-top: 25px;
   margin-left: 20;
 }
+.mat-drawer {
+  background-color: #11a967 ;
+  color: #04442c;
+}
+.mat-drawer-container {
+  background: rgb(0,19,255);
+background: linear-gradient(0deg, rgba(0,19,255,1) 29%, rgba(0,8,108,1) 44%, rgba(0,0,0,1) 65%, rgba(0,0,0,1) 100%);
+}
+
+.mat-toolbar.mat-primary {
+  background: rgba(0,8,108,1);
+}
+.mat-drawer-container {
+  background: rgb(0,8,108);
+background: linear-gradient(180deg, rgba(0,8,108,1) 44%, rgba(255,255,255,1) 80%);}

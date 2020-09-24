@@ -13,12 +13,12 @@ export class VeiculosComponent implements OnInit {
   dataSource: Veiculo[];
   isLoadingResults = false;
 
-  constructor(private _api: ApiService) { }
+  constructor(private api: ApiService) { }
 
   ngOnInit() {
-    this._api.getVeiculos()
+    this.api.getVeiculos()
     .subscribe(res => {
-      this.dataSource = res.carro;
+      this.dataSource = res;
       console.log(res);
       this.isLoadingResults = false;
     }, err => {
